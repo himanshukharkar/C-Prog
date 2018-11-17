@@ -32,8 +32,6 @@ if(a==' ')
 else if(a==' ')
 count1++;
 i=i+1;
-	}
-cout<<"";
 cout<<"\nNumber of characters: "<<i-(count-1+count1-1)<<"";
 cout<<"\nNumber of words: "<<count1<<"";
 cout<<"\nNumber of lines: "<<count<<"";
