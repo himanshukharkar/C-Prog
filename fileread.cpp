@@ -14,23 +14,23 @@ class FileDemo{
   file.open(filename,ios::in);
  }
 void find(){
-int a=0,b=0;
+int a=1,b=1,d=1;
 char c;
 while(file){
  file.get(c);
- if(c==' ')
+ if(c==' '||c=='\n')
 		{
 			a++;
-			b++;
+		//	b++;
 		}
 	if(c=='\n')
-			b++;
+			d++;
 		i=i+1;
 }
 cout<<"\nName of the file: "<<filename;
-cout<<"\nNumber of characters: "<<i-a-1+b-1<<"";
+cout<<"\nNumber of characters: "<<i-a-1+b<<"";
 cout<<"\nNumber of Words: "<<a;
-cout<<"\nNumber of Lines: "<<b;
+cout<<"\nNumber of Lines: "<<d;
 }
  ~FileDemo(){
    file.close();
@@ -44,4 +44,3 @@ char ch;
   
 
 }
-
