@@ -1,41 +1,38 @@
 #include<iostream>
 #include<fstream>
-#include<string>
 using namespace std;
+
+class FileDemo{
+ char filename[20];
+ int a,b,i=0;
+ ifstream file;
+public:
+ FileDemo(){
+  cout<<"\nEnter the file name: ";
+  cin>>filename;
+  file.open(filename,ios::in);
+ }
+void find(){
+int a=0,b=0;
+char c;
+while(file){
+ file.get(c);
+ if(c==' '||c=='\n') a++;
+ if(c=='\n') b++;
+}
+cout<<"\nName of the file: "<<filename;
+cout<<"\nNumber of characters: "<<i-(a-1+b-1)<<"";
+cout<<"\nNumber of Words: "<<a;
+cout<<"\nNumber of Lines: "<<b;
+}
+ ~FileDemo(){
+   file.close();
+  }
+};
 int main()
 {
-string filename;
-cout<<"Please enter the file name: ";
+char ch;
+  FileDemo obj;
+  obj.find();
 
-cin>>filename;
-
-ifstream infile(filename, std::ifstream::in); 
-if(!infile) {
-		cout << "Cannot open file for reading.\n";
-
-return 1;
-	} 
-
-char a,c;
-int count=1;
-int i=0;
-int count1=1;
-
-	
-while(infile.get(a){
-cout<<a;
-if(a==' ')
-{
-	count++;
-	count1++;
-	}
-else if(a==' ')
-count1++;
-i=i+1;
-cout<<"\nNumber of characters: "<<i-(count-1+count1-1)<<"";
-cout<<"\nNumber of words: "<<count1<<"";
-cout<<"\nNumber of lines: "<<count<<"";
-infile.close();
-
-	return 0;
 }
