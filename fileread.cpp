@@ -37,7 +37,6 @@ cout<<"\nNumber of Lines: "<<d;
 };
 int main()
 {
-char ch;
   FileDemo obj;
   obj.find();
   
